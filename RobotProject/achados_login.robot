@@ -2,29 +2,20 @@
 Library	SeleniumLibrary
 
 *** Variables ***
-${BROWSER}		    chrome 
 ${URL}			    http://localhost/PUC-Achados/
 ${USUARIO_ADM}      adm@adm.com
-${SENHA_ADM}        adm
+${SENHA_ADM}        adm486ç-
 ${NAME_ADM}         adm_nome
 ${USUARIO_FUN}      funcionario@pucpr.br
-${SENHA_FUN}        fun
+${SENHA_FUN}        fun486ç-
 ${NAME_FUN}         Funcionário Generico
 ${USUARIO_ALU}      aluno@pucpr.edu.br
-${SENHA_ALU}        aluno
+${SENHA_ALU}        aluno486ç-
 ${NAME_ALU}         Aluno Generico
 
 
 
 *** Keywords ***
-Abrir o navegador
-	Open Browser	browser=${BROWSER}
-	Maximize Browser Window
-	
-Fechar o navegador
-	Capture Page Screenshot
-	Close Browser
-
 Acessar a pagina home do site
 	Go To	url=${URL}
 

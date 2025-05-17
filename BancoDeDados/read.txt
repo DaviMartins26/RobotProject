@@ -1,0 +1,6 @@
+No Backup temos o banco de dados orignal completo e o da tabela pessoa separado.
+O pessoa.sql fora de backup possue as mudanças nas senhas do Aluno, Funcionario e ADM.
+
+Pois estava tendo um problema de popup avisando que a senha usada era fraca e que ja tinha sido vazada em vazamentos de banco de dados.
+Oque não é um problema em um ambiente como o nosso de estudo, porem esse popup atrapalhava o funcionamento do robot.
+Foi tentado iniciar um modo de impedir esse popup, sem exito então a alternativa mais barata e rapida foi so mudar a senha pra uma mais forte no banco.
