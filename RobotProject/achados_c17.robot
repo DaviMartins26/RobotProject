@@ -9,17 +9,8 @@ ${DATA_HOJE}=    Get Current Date    result_format=%Y-%m-%d
 ${DATA_FUTURA}=  Add Time To Date    ${DATA_HOJE}    +1 days
 *** Keywords ***
 
-Acessar a pagina PerdiAlgo
-    #Esse comando faz o robot esperar 5s até o elemento ficar visivel
-    Wait Until Element Is Visible    id=link_perdi_algo
-    Click Element                    id=link_perdi_algo
-    Wait Until Element Is Visible    id=nome_item          timeout=15s 
-
 Escrever em Nome do Campo
     Input Text  id=nome_item  ${PREENCHER}
-
-Verificar Pagina Perda
-    Location Should Be    http://localhost/PUC-Achados/protocolo_perda/perdi_algo.php
 
 Reescrever Data
     [Arguments]    ${dias_no_futuro}=1
@@ -31,12 +22,6 @@ Reescrever Data
     # Define o valor do campo de input 'data_perda' usando JavaScript
     Execute Javascript               document.getElementById('data_perda').value = '${data_futura}';
     Sleep    3s
-
-Acionar o botão Enviar
-    Wait Until Element Is Visible    id=enviar_objeto
-	Click Element    id=enviar_objeto
-	Sleep    3s
-
 
 Verificar Notificacao De Sucesso
     # Espera até 10 segundos para o alerta aparecer e verifica se a mensagem é a esperada

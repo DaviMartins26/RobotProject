@@ -1,23 +1,31 @@
 *** Settings ***
-#Esse documento o davi ta usando pra testes
+#Esse é o documento "Main" vamos colocar aqui apenas oq estiver pronto
 Documentation    Essa suíte testa o funcionalidades do projeto PUC_Achados
-#Esse achados_login.robot chama os Logar como 
+#Controle de Browser
 Resource         achados_browser.robot
+#Acessar Pagina Perdi Algo
+Resource         achados_perdiAlgo.robot
+#Controle de Login
 Resource         achados_login.robot 
-Resource         achados_davi.robot
+#Comandos pro Teste 17
+Resource         achados_c17.robot
+#Comando pro Teste 30
+Resource         achados_c30.robot
+
+
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
 
 *** Test Cases ***
-CT17 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro
-	[Documentation]    Esse teste verifica o login de um ADM
-	[Tags]             perda_fora_de_tempo
+
+CT30 - Tentar acessar uma parte do sistema como usuario invalido usando URL
+	[Documentation]    Acessar parte Interna do sistema com usuario invalido
+	[Tags]             seguranca
 	Acessar a pagina home do site
     Acessar a pagina login
-    Logar como ALU
-	Acessar a pagina PerdiAlgo
-	Verificar Pagina Perda
-	Escrever em Nome do Campo
-	Reescrever Data
+	Logar como ALU
+	Acessar a pagina gerenciar_fun
+	Verificar Pagina Nao-Autorizado
+
     
 

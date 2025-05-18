@@ -3,7 +3,6 @@
 Library     SeleniumLibrary
 *** Variables ***
 ${BROWSER}                     chrome
-${URL}                         http://localhost/PUC-Achados/
 
 *** Keywords ***
 Abrir o navegador
