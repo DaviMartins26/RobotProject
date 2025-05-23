@@ -17,12 +17,12 @@ Test Teardown    Fechar o navegador
 
 *** Test Cases ***
 #Estes testes foram feitos apenas pra testar o Logar como ... depois serão colocados os testes de verdade aqui.
-CT1 - Realizar login com usuário adm
-	[Documentation]    Esse teste verifica o login de um ADM
-	[Tags]             login_userADM
+CT1 - Tentar fazer Login com usuário não presente no banco de dados
+	[Documentation]    Esse teste verifica o login de um usuario nao cadastrado
+	[Tags]             login_usuario_inexistente
 	Acessar a pagina home do site
     Acessar a pagina login
-    Logar como ADM
+    Logar como usuario inexistente
     
 CT2 - Realizar login com usuário FUN
 	[Documentation]    Esse teste verifica o login de um usuario FUN
@@ -37,6 +37,13 @@ CT3 - Realizar login com usuário ALU
 	Acessar a pagina home do site
     Acessar a pagina login
 	Logar como ALU
+
+CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
+	[Documentation]    Esse teste tenta cadastrar campos do objeto como null/space
+	[Tags]             campos_objeto_null
+	Acessar a pagina home do site
+    Acessar a pagina login
+    Logar como FUN
 	
 CT17 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro
 	[Documentation]    Esse Simula um Aluno registando um objeto com data_perda invalida-Dia de amanha
