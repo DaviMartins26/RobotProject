@@ -11,6 +11,7 @@ ${PAUSA}         2s
 *** Test Cases ***
 CT01 - Login com usuário não cadastrado
     Sleep    ${PAUSA}
+    Clicar Em Login
     Sleep    ${PAUSA}
     Preencher Campo Email    usuarioinexistente@teste.com
     Sleep    ${PAUSA}
