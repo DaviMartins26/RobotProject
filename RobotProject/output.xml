@@ -1,147 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-23T10:36:18.904747" rpa="false" schemaversion="5">
-<suite id="s1" name="Achados C1" source="C:\Users\joshu\OneDrive\Documentos\GitHub\RobotProject\RobotProject\achados_c1.robot">
-<kw name="Abrir Navegador e Acessar PUC Achados" type="SETUP">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-25T18:13:15.893471" rpa="false" schemaversion="5">
+<suite id="s1" name="Achados Dev" source="C:\Users\Davisão\Desktop\robot\Codigos\RobotProject\achados_dev.robot">
+<test id="s1-t1" name="CT18 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro" line="18">
+<kw name="Abrir o navegador" owner="achados_browser" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-23T10:36:19.127111" level="INFO">Opening browser 'Chrome' to base url 'http://localhost/PUC-Achadoss/index.php'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
+<msg time="2025-05-25T18:13:16.171292" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-23T10:36:19.126943" elapsed="1.749168"/>
+<status status="PASS" start="2025-05-25T18:13:16.171105" elapsed="1.213400"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-23T10:36:20.876376" elapsed="0.029896"/>
+<status status="PASS" start="2025-05-25T18:13:17.384717" elapsed="0.034904"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=//a[contains(., 'Login')]</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-05-23T10:36:20.906550" elapsed="0.023895"/>
+<status status="PASS" start="2025-05-25T18:13:16.170534" elapsed="1.249205"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:22.932094" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:20.930802" elapsed="2.001494"/>
+<kw name="Acessar a pagina home do site" owner="achados_login">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:17.420501" level="INFO">Opening url 'http://localhost/PUC-Achados/'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-25T18:13:17.420365" elapsed="0.117729"/>
 </kw>
-<status status="PASS" start="2025-05-23T10:36:19.126560" elapsed="3.805927"/>
+<status status="PASS" start="2025-05-25T18:13:17.420103" elapsed="0.118184"/>
 </kw>
-<test id="s1-t1" name="CT01 - Login com usuário não cadastrado" line="12">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:24.942556" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:22.942072" elapsed="2.000676"/>
-</kw>
-<kw name="Clicar Em Login">
+<kw name="Acessar a pagina login" owner="achados_login">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-23T10:36:24.946473" level="INFO">Clicking element 'xpath=//a[contains(., 'Login')]'.</msg>
-<arg>xpath=//a[contains(., 'Login')]</arg>
+<msg time="2025-05-25T18:13:17.540048" level="INFO">Clicking element 'css=a[id="login_sem_cadastro"] img'.</msg>
+<arg>css=a[id="login_sem_cadastro"] img</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-23T10:36:24.946353" elapsed="0.132696"/>
+<status status="PASS" start="2025-05-25T18:13:17.539321" elapsed="0.112600"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>id=email_id</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-05-23T10:36:25.079256" elapsed="0.006566"/>
+<status status="PASS" start="2025-05-25T18:13:17.538811" elapsed="0.113217"/>
 </kw>
-<status status="PASS" start="2025-05-23T10:36:24.946153" elapsed="0.139772"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:27.086831" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:25.086261" elapsed="2.000765"/>
-</kw>
-<kw name="Preencher Campo Email">
+<kw name="Logar como ALU" owner="achados_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-23T10:36:27.088750" level="INFO">Typing text 'usuarioinexistente@teste.com' into text field 'id=email_id'.</msg>
-<arg>id=email_id</arg>
-<arg>${email}</arg>
+<msg time="2025-05-25T18:13:17.652924" level="INFO">Typing text 'aluno@pucpr.edu.br' into text field 'css:input[id=email_id]'.</msg>
+<arg>css:input[id=email_id]</arg>
+<arg>${USUARIO_ALU}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-23T10:36:27.088405" elapsed="0.116860"/>
+<status status="PASS" start="2025-05-25T18:13:17.652710" elapsed="0.074979"/>
 </kw>
-<arg>usuarioinexistente@teste.com</arg>
-<status status="PASS" start="2025-05-23T10:36:27.087800" elapsed="0.117592"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:29.207297" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:27.206758" elapsed="2.000808"/>
-</kw>
-<kw name="Preencher Campo Senha">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-23T10:36:29.209714" level="INFO">Typing text '123' into text field 'id=senha_id'.</msg>
-<arg>id=senha_id</arg>
-<arg>${senha}</arg>
+<msg time="2025-05-25T18:13:17.728066" level="INFO">Typing text 'aluno486ç-' into text field 'css:input[id=senha_id]'.</msg>
+<arg>css:input[id=senha_id]</arg>
+<arg>${SENHA_ALU}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-23T10:36:29.209328" elapsed="0.082085"/>
+<status status="PASS" start="2025-05-25T18:13:17.727859" elapsed="0.054528"/>
 </kw>
-<arg>123</arg>
-<status status="PASS" start="2025-05-23T10:36:29.208601" elapsed="0.082904"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:31.292610" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:29.291756" elapsed="2.001080"/>
-</kw>
-<kw name="Clicar Em Entrar">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-23T10:36:31.301722" level="INFO">Clicking element 'id=enviar'.</msg>
-<arg>id=enviar</arg>
+<msg time="2025-05-25T18:13:17.782744" level="INFO">Clicking element 'css:input[id=enviar]'.</msg>
+<arg>css:input[id=enviar]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-23T10:36:31.301317" elapsed="0.263161"/>
-</kw>
-<status status="PASS" start="2025-05-23T10:36:31.300720" elapsed="0.263992"/>
+<status status="PASS" start="2025-05-25T18:13:17.782575" elapsed="0.046669"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:33.566150" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
+<msg time="2025-05-25T18:13:20.830401" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:31.565245" elapsed="2.001030"/>
+<status status="PASS" start="2025-05-25T18:13:17.829431" elapsed="3.001094"/>
 </kw>
-<kw name="Verificar Mensagem Credenciais Invalidas">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:20.842234" level="INFO">Current page contains text 'Aluno Generico'.</msg>
+<arg>${NAME_ALU}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T18:13:20.830713" elapsed="0.011606"/>
+</kw>
+<status status="PASS" start="2025-05-25T18:13:17.652389" elapsed="3.190010"/>
+</kw>
+<kw name="Acessar a pagina PerdiAlgo" owner="achados_perdiAlgo">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=link_perdi_algo</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-25T18:13:20.842899" elapsed="0.014889"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:20.858158" level="INFO">Clicking element 'id=link_perdi_algo'.</msg>
+<arg>id=link_perdi_algo</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T18:13:20.857986" elapsed="0.089409"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=nome_item</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-25T18:13:20.947566" elapsed="0.075913"/>
+</kw>
+<status status="PASS" start="2025-05-25T18:13:20.842690" elapsed="0.180917"/>
+</kw>
+<kw name="Verificar Pagina PerdiAlgo" owner="achados_perdiAlgo">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:21.028840" level="INFO">Current location is 'http://localhost/PUC-Achados/protocolo_perda/perdi_algo.php'.</msg>
+<arg>http://localhost/PUC-Achados/protocolo_perda/perdi_algo.php</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-25T18:13:21.024188" elapsed="0.004763"/>
+</kw>
+<status status="PASS" start="2025-05-25T18:13:21.023964" elapsed="0.005077"/>
+</kw>
+<kw name="C18 Escrever em Nome do Campo" owner="achados_c18">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:21.029800" level="INFO">Typing text 'Teste18' into text field 'id=nome_item'.</msg>
+<arg>id=nome_item</arg>
+<arg>${C18}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T18:13:21.029586" elapsed="0.050112"/>
+</kw>
+<status status="PASS" start="2025-05-25T18:13:21.029328" elapsed="0.050513"/>
+</kw>
+<kw name="C18 Reescrever Data Passado" owner="achados_c18">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-05-25T18:13:21.081123" level="INFO">${DATA_HOJE} = 2025-05-25</msg>
+<var>${DATA_HOJE}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-05-25T18:13:21.080931" elapsed="0.000221"/>
+</kw>
+<kw name="Add Time To Date" owner="DateTime">
+<msg time="2025-05-25T18:13:21.084547" level="INFO">${DATA_PASSADO} = 2025-05-04</msg>
+<var>${DATA_PASSADO}</var>
+<arg>${DATA_HOJE}</arg>
+<arg>-${dias_passado} days</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Adds time to date and returns the resulting date.</doc>
+<status status="PASS" start="2025-05-25T18:13:21.081249" elapsed="0.003337"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>A data futura para o campo é: ${DATA_PASSADO}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-25T18:13:21.084720" elapsed="0.000294"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T18:13:24.086147" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T18:13:21.085129" elapsed="3.001141"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=data_perda</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-25T18:13:24.086459" elapsed="0.013334"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:24.100398" level="INFO">Executing JavaScript:
+document.getElementById('data_perda').value = '2025-05-04';
+Without any arguments.</msg>
+<arg>document.getElementById('data_perda').value = '${DATA_PASSADO}';</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T18:13:24.099984" elapsed="0.004993"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T18:13:27.105739" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T18:13:24.105142" elapsed="3.000718"/>
+</kw>
+<status status="PASS" start="2025-05-25T18:13:21.080652" elapsed="6.025486"/>
+</kw>
+<kw name="Acionar o botão Enviar_Objeto" owner="achados_perdiAlgo">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=enviar_objeto</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-25T18:13:27.106871" elapsed="0.012568"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:27.119752" level="INFO">Clicking element 'id=enviar_objeto'.</msg>
+<arg>id=enviar_objeto</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T18:13:27.119595" elapsed="0.035863"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T18:13:30.156534" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T18:13:27.155648" elapsed="3.001006"/>
+</kw>
+<status status="PASS" start="2025-05-25T18:13:27.106568" elapsed="3.050194"/>
+</kw>
+<kw name="C18 Verificar Notificacao De Sucesso" owner="achados_c18">
 <kw name="Alert Should Be Present" owner="SeleniumLibrary">
-<msg time="2025-05-23T10:36:33.607403" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<arg>Credenciais Inválidas</arg>
+<msg time="2025-05-25T18:13:30.157810" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:10</msg>
+<msg time="2025-05-25T18:13:30.494778" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-25T18:13:30.494945" level="FAIL">Alert message should have been 'Informe uma Data Valida!' but it was 'Protocolo registrado com sucesso!'.</msg>
+<arg>Informe uma Data Valida!</arg>
+<arg>timeout=10s</arg>
 <doc>Verifies that an alert is present and by default, accepts it.</doc>
-<status status="PASS" start="2025-05-23T10:36:33.606869" elapsed="0.007779"/>
+<status status="FAIL" start="2025-05-25T18:13:30.157645" elapsed="0.338717">Alert message should have been 'Informe uma Data Valida!' but it was 'Protocolo registrado com sucesso!'.</status>
 </kw>
-<status status="PASS" start="2025-05-23T10:36:33.606535" elapsed="0.008243"/>
+<status status="FAIL" start="2025-05-25T18:13:30.157421" elapsed="0.339091">Alert message should have been 'Informe uma Data Valida!' but it was 'Protocolo registrado com sucesso!'.</status>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:35.615808" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:33.615041" elapsed="2.000891"/>
-</kw>
-<status status="PASS" start="2025-05-23T10:36:22.932657" elapsed="12.688315"/>
-</test>
-<kw name="Fechar Navegador" type="TEARDOWN">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-23T10:36:37.623048" level="INFO">Slept 2 seconds.</msg>
-<arg>${PAUSA}</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-23T10:36:35.622294" elapsed="2.001006"/>
+<kw name="Fechar o navegador" owner="achados_browser" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-05-25T18:13:30.615048" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-21.png"&gt;&lt;img src="selenium-screenshot-21.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-05-25T18:13:30.497125" elapsed="0.118022"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-23T10:36:37.623636" elapsed="3.239840"/>
+<status status="PASS" start="2025-05-25T18:13:30.615289" elapsed="2.128310"/>
 </kw>
-<status status="PASS" start="2025-05-23T10:36:35.622097" elapsed="5.241679"/>
+<status status="PASS" start="2025-05-25T18:13:30.496904" elapsed="2.246804"/>
 </kw>
-<status status="PASS" start="2025-05-23T10:36:18.905610" elapsed="21.958295"/>
+<doc>Esse Simula um Aluno registando um objeto com data_perda invalida-Dia de amanha</doc>
+<tag>perda_fora_de_tempo</tag>
+<status status="FAIL" start="2025-05-25T18:13:16.169727" elapsed="16.574216">Alert message should have been 'Informe uma Data Valida!' but it was 'Protocolo registrado com sucesso!'.</status>
+</test>
+<doc>Essa suíte testa o funcionalidades do projeto PUC_Achados</doc>
+<status status="FAIL" start="2025-05-25T18:13:15.894900" elapsed="16.850487"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">perda_fora_de_tempo</stat>
 </tag>
 <suite>
-<stat name="Achados C1" id="s1" pass="1" fail="0" skip="0">Achados C1</stat>
+<stat name="Achados Dev" id="s1" pass="0" fail="1" skip="0">Achados Dev</stat>
 </suite>
 </statistics>
 <errors>

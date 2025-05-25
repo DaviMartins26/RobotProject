@@ -7,25 +7,15 @@ Resource         achados_browser.robot
 Resource         achados_perdiAlgo.robot
 #Controle de Login
 Resource         achados_login.robot 
-#Comandos pro Teste 17
-Resource         achados_c17.robot
 #Comando pro Teste 30
-Resource         achados_c30.robot
+Resource         achados_c18.robot
 
 
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
 
 *** Test Cases ***
-
-CT30 - Tentar acessar uma parte do sistema como usuario invalido usando URL
-	[Documentation]    Acessar parte Interna do sistema com usuario invalido
-	[Tags]             seguranca
-	Acessar a pagina home do site
-    Acessar a pagina login
-	Logar como ALU
-	Acessar a pagina gerenciar_fun
-	Verificar Pagina Nao-Autorizado
-
-    
+CT20 - Tentar fazer Login com usuário não presente no banco de dados
+	[Documentation]    Esse teste verifica o login de um usuario nao cadastrado
+	[Tags]             login_usuario_inexistente
 

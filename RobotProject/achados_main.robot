@@ -3,17 +3,23 @@
 Documentation    Essa suíte testa o funcionalidades do projeto PUC_Achados
 #Controle de Browser
 Resource         achados_browser.robot
-#Acessar Pagina Perdi Algo
-Resource         achados_perdiAlgo.robot
 #Controle de Login
 Resource         achados_login.robot 
-#Comandos pro Teste 17
+#Acessar Pagina Perdi Algo
+Resource         achados_perdiAlgo.robot
+#Comando para o Caso 01
+Resource         achados_c1.robot
+#Comando para o Caso 14
+Resource         achados_c14.robot
+#Comando para o Caso 17
 Resource         achados_c17.robot
-#Comando pro Teste 30
-Resource         achados_c30.robot
+#Comando para o Caso 18
+Resource         achados_c18.robot
+
 
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
+
 
 *** Test Cases ***
 #Estes testes foram feitos apenas pra testar o Logar como ... depois serão colocados os testes de verdade aqui.
@@ -22,22 +28,9 @@ CT1 - Tentar fazer Login com usuário não presente no banco de dados
 	[Tags]             login_usuario_inexistente
 	Acessar a pagina home do site
     Acessar a pagina login
-    Logar como usuario inexistente
-    
-CT2 - Realizar login com usuário FUN
-	[Documentation]    Esse teste verifica o login de um usuario FUN
-	[Tags]             login_userFUN
-	Acessar a pagina home do site
-    Acessar a pagina login
-    Logar como FUN
-
-CT3 - Realizar login com usuário ALU
-	[Documentation]    Esse teste verifica o login de um usuario ALU
-	[Tags]             login_userALU
-	Acessar a pagina home do site
-    Acessar a pagina login
-	Logar como ALU
-
+    C1 Logar como usuario inexistente
+	C1 Verificar Notificacao Credenciais Invalidas
+	
 CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
 	[Documentation]    Esse teste tenta cadastrar campos do objeto como null/space
 	[Tags]             campos_objeto_null
@@ -47,22 +40,26 @@ CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
 	
 CT17 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro
 	[Documentation]    Esse Simula um Aluno registando um objeto com data_perda invalida-Dia de amanha
-	[Tags]             perda_fora_de_tempo
+	[Tags]             perda_futura
 	Acessar a pagina home do site
     Acessar a pagina login
     Logar como ALU
 	Acessar a pagina PerdiAlgo
     Verificar Pagina PerdiAlgo
-	Escrever em Nome do Campo
-	Reescrever Data
+	C17 Escrever em Nome do Campo
+	C17 Reescrever Data Futuro
     Acionar o botão Enviar_Objeto
-	Verificar Notificacao De Sucesso
-    
-CT30 - Tentar acessar uma parte do sistema como usuario invalido usando URL
-	[Documentation]    Acessar parte Interna do sistema com usuario invalido
-	[Tags]             seguranca
+	C17 Verificar Notificacao De Sucesso 
+
+CT18 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro
+	[Documentation]    Esse Simula um Aluno registando um objeto com data_perda invalida- mais de uma semana de perda, por regra de negocio
+	[Tags]             perda_fora_de_tempo_de_registro
 	Acessar a pagina home do site
     Acessar a pagina login
-	Logar como ALU
-	Acessar a pagina gerenciar_fun
-	Verificar Pagina Nao-Autorizado
+    Logar como ALU
+	Acessar a pagina PerdiAlgo
+    Verificar Pagina PerdiAlgo
+	C18 Escrever em Nome do Campo
+    C18 Reescrever Data Passado
+    Acionar o botão Enviar_Objeto
+	C18 Verificar Notificacao De Sucesso
