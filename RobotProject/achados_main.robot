@@ -7,14 +7,21 @@ Resource         achados_browser.robot
 Resource         achados_login.robot 
 #Acessar Pagina Perdi Algo
 Resource         achados_perdiAlgo.robot
-#Comando para o Caso 01
+#Acessar Pagina Meus Protolocos
+Resource         achados_meusProtocolos.robot
+#Comandos para o Caso 01
 Resource         achados_c1.robot
-#Comando para o Caso 14
+#Comandos para o Caso 14
 Resource         achados_c14.robot
-#Comando para o Caso 17
+#Comandos para o Caso 17
 Resource         achados_c17.robot
-#Comando para o Caso 18
+#Comandos para o Caso 18
 Resource         achados_c18.robot
+#Comandos para o Caso 20
+Resource         achados_c20.robot
+#Comandos para o Caso 25
+Resource         achados_c25.robot
+
 
 
 Test Setup       Abrir o navegador
@@ -39,7 +46,7 @@ CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
     Logar como FUN
 	
 CT17 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro
-	[Documentation]    Esse Simula um Aluno registando um objeto com data_perda invalida-Dia de amanha
+	[Documentation]    Esse Simula um usuario registando um objeto com data_perda invalida-Dia de amanha
 	[Tags]             perda_futura
 	Acessar a pagina home do site
     Acessar a pagina login
@@ -51,8 +58,8 @@ CT17 - Como usuário normal tentar registrar um objeto que Perdi com data de Per
     Acionar o botão Enviar_Objeto
 	C17 Verificar Notificacao De Sucesso 
 
-CT18 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro
-	[Documentation]    Esse Simula um Aluno registando um objeto com data_perda invalida- mais de uma semana de perda, por regra de negocio
+CT18 - Como usuário normal tentar registrar um objeto que Perdi com data de perda Passada
+	[Documentation]    Teste que registando um objeto com data_perda invalida- mais de uma semana de perda- por regra de negocio
 	[Tags]             perda_fora_de_tempo_de_registro
 	Acessar a pagina home do site
     Acessar a pagina login
@@ -63,3 +70,34 @@ CT18 - Como usuário normal tentar registrar um objeto que Perdi com data de Per
     C18 Reescrever Data Passado
     Acionar o botão Enviar_Objeto
 	C18 Verificar Notificacao De Sucesso
+
+CT20 - Como usuário normal tentar registrar um objeto que Perdi passando o nome como Null mas com Descrição
+	[Documentation]    Esse teste verifica se o sistema não registra um objeto preenchido de forma invalida-De acordo com regra de negocio- por um ususario normal
+	[Tags]             objeto_nomeInvalido_com_descricaoValida
+	Acessar a pagina home do site
+    Acessar a pagina login
+    Logar como ALU
+	Acessar a pagina PerdiAlgo
+    Verificar Pagina PerdiAlgo
+	C20 Passar valor Nulo
+	C20 Preencher Descricao
+    Acionar o botão Enviar_Objeto
+	C20 Verificar Notificacao
+
+CT25 - Fazer um Protocolo e ver se o mesmo aparece em Meus Protocolos
+	[Documentation]    Esse teste verifica se o protocolo registrado pelo usuario generico pode ser acessado pelo mesmo em Meus Protocolos
+	[Tags]             objeto_nomeInvalido_com_descricaoValida
+	Acessar a pagina home do site
+    Acessar a pagina login
+    Logar como ALU
+	Acessar a pagina PerdiAlgo
+    Verificar Pagina PerdiAlgo
+	C25 Preencher Nome
+    C25 Preencher Descricao
+	Acionar o botão Enviar_Objeto
+	C25 Verificar Notificacao
+	Acessar a pagina meusProtocolos
+    Verificar Pagina meusProtocolos
+	C25 Preencher Filtro
+	C25 Verificar Filtragem
+

@@ -4,11 +4,11 @@ Library    DateTime
 
 *** Variables ***
 
-${C17}  Teste17
+${Termo-C17}  Teste17
 *** Keywords ***
 
 C17 Escrever em Nome do Campo
-    Input Text  id=nome_item  ${C17}
+    Input Text  id=nome_item  ${Termo-C17}
 
 C17 Reescrever Data Futuro
     [Arguments]    ${dias_no_futuro}=1

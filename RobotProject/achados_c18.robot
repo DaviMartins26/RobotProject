@@ -4,11 +4,11 @@ Library    DateTime
 
 *** Variables ***
 
-${C18}  Teste18
+${Termo-C18}  Teste18
 *** Keywords ***
 
 C18 Escrever em Nome do Campo
-    Input Text  id=nome_item  ${C18}
+    Input Text  id=nome_item  ${Termo-C18}
 
 C18 Reescrever Data Passado
     [Arguments]    ${dias_passado}=21
