@@ -11,6 +11,10 @@ Resource         achados_perdiAlgo.robot
 Resource         achados_meusProtocolos.robot
 #Comandos para o Caso 01
 Resource         achados_c1.robot
+#Comandos para o Caso 02
+Resource         achados_c2.robot
+#Comandos para o Caso 03
+Resource         achados_c3.robot
 #Comandos para o Caso 14
 Resource         achados_c14.robot
 #Comandos para o Caso 17
