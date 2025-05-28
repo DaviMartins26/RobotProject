@@ -15,6 +15,10 @@ Resource         achados_meusProtocolos.robot
 Resource         achados_criarConta.robot
 #Comandos para o Caso 01
 Resource         achados_c1.robot
+#Comandos para o Caso 02
+Resource         achados_c2_atualizado.robot
+#Comandos para o Caso 03
+Resource         achados_c3.robot
 #Comandos para o Caso 13
 Resource         achados_c13.robot
 #Comandos para o Caso 14
@@ -45,6 +49,23 @@ CT1 - Tentar fazer Login com usuário não presente no banco de dados
     Acessar a pagina login
     C1 Logar como usuario inexistente
 	C1 Verificar Notificacao Credenciais Invalidas
+
+CT2 - Tentar fazer Login sem informar a senha
+	[Documentation]    Esse teste verifica o login sem informar a senha
+	[Tags]             login_sem_senha
+	Acessar a pagina home do site
+    Acessar a pagina login
+    C2 Tentar fazer login sem informar a senha
+	C2 Verificar Notificacao Preencha este campo
+
+CT3 - Tentar fazer Login sem inserir @ no e-mail
+	[Documentation]    Esse teste verifica o login sem inserir @ no e-mail
+	[Tags]             login_sem_@_e-mail
+	Acessar a pagina home do site
+    Acessar a pagina login
+    C3 Tentar fazer login sem inserir @ no e-mail
+	C3 Verificar Notificacao Digite um endereço de email
+
 
 CT13 - Como funcionário logado tentar cadastrar um objeto com os campos vazios
 	[Documentation]    Esse Simula um funcionario registando um objeto com os campos nome_item, tipo-do-item e bloco-de-encontro não preenchidos 
