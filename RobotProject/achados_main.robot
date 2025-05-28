@@ -7,6 +7,8 @@ Resource         achados_browser.robot
 Resource         achados_login.robot 
 #Acessar Pagina Perdi Algo
 Resource         achados_perdiAlgo.robot
+#Acessar Pagina Registrar Objeto
+Resource         achados_registrarObjeto.robot
 #Acessar Pagina Meus Protolocos
 Resource         achados_meusProtocolos.robot
 #Comandos para o Caso 01
@@ -15,8 +17,12 @@ Resource         achados_c1.robot
 Resource         achados_c2.robot
 #Comandos para o Caso 03
 Resource         achados_c3.robot
+#Comandos para o Caso 13
+Resource         achados_c13.robot
 #Comandos para o Caso 14
 Resource         achados_c14.robot
+#Comandos para o Caso 16
+Resource         achados_c16.robot
 #Comandos para o Caso 17
 Resource         achados_c17.robot
 #Comandos para o Caso 18
@@ -48,7 +54,35 @@ CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
 	Acessar a pagina home do site
     Acessar a pagina login
     Logar como FUN
-	
+
+CT13 - Como funcionário logado tentar cadastrar um objeto com os campos vazios
+	[Documentation]    Esse Simula um funcionario registando um objeto com os campos nome_item, tipo-do-item e bloco-de-encontro não preenchidos 
+	[Tags]             registrar_objeto_achado
+	Acessar a pagina home do site
+    Acessar a pagina login
+	#DAVI: Deu erro no login
+    Logar como FUN
+	#DAVI: Não sei se eu fiz certo, precisa dar uma olhada no arquivo achados_registrarObjeto.robot
+	Acessar a pagina RegistrarObjeto
+    Verificar Pagina RegistrarObjeto
+	C13 Passar valor Nulo
+    Acionar o botão Botao_Registrar
+	C13 Verificar Notificacao
+
+CT16 - Como usuário normal tentar registrar um objeto que perdi passando os campos Null
+	[Documentation]    Esse Simula um usuario registando um objeto com o campo nome_item nullo
+	[Tags]             perda_futura
+	Acessar a pagina home do site
+    Acessar a pagina login
+	#DAVI: Deu erro no login
+    Logar como ALU
+	Acessar a pagina PerdiAlgo 
+    Verificar Pagina PerdiAlgo
+	#DAVI: No meu caso de teste ele não deveria preencher nada, neste caso, é necessário eu passar algum valor nulo eu só deixo registrado a Verificação de Notificação?
+	C16 Passar valor Nulo
+    Acionar o botão Enviar_Objeto
+	C16 Verificar Notificacao
+
 CT17 - Como usuário normal tentar registrar um objeto que Perdi com data de Perda de uma data do Futuro
 	[Documentation]    Esse Simula um usuario registando um objeto com data_perda invalida-Dia de amanha
 	[Tags]             perda_futura
