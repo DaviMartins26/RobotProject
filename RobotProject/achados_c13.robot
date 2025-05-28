@@ -5,7 +5,7 @@ Library    DateTime
 *** Variables ***
 ${PAUSA}           2s
 #EMPTY passa um campo vazio
-${VAZIO-13}    "        "
+${VAZIO-13}    ${EMPTY}
 ${Alerta-C13}        Por favor, insira informações válidas
 
 *** Keywords ***
