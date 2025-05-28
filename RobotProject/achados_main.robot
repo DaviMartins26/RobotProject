@@ -65,7 +65,10 @@ CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
 	Acessar a pagina home do site
     Acessar a pagina login
     Logar como FUN
-
+    Acessar a pagina RegistrarObjeto
+	C14 preencher com null
+    C14 Verificar Notificacao Credenciais Invalidas
+    
 CT16 - Como usuário normal tentar registrar um objeto que perdi passando os campos Null
 	[Documentation]    Esse Simula um usuario registando um objeto com o campo nome_item nullo
 	[Tags]             perda_futura
