@@ -16,7 +16,7 @@ Resource         achados_criarConta.robot
 #Comandos para o Caso 01
 Resource         achados_c1.robot
 #Comandos para o Caso 02
-Resource         achados_c2_atualizado.robot
+Resource         achados_c2.robot
 #Comandos para o Caso 03
 Resource         achados_c3.robot
 #Comandos para o Caso 13
@@ -63,8 +63,8 @@ CT3 - Tentar fazer Login sem inserir @ no e-mail
 	[Tags]             login_sem_@_e-mail
 	Acessar a pagina home do site
     Acessar a pagina login
-    C3 Tentar fazer login sem inserir @ no e-mail
-	C3 Verificar Notificacao Digite um endereço de email
+    C3 Tentar fazer Login sem informar @ no e-mail
+    C3 Verificar Notificacao Digite um endereço de e-mail
 
 
 CT13 - Como funcionário logado tentar cadastrar um objeto com os campos vazios

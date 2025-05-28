@@ -23,11 +23,3 @@ C3 Verificar Notificacao Digite um endereço de e-mail
     Should Match Regexp    ${msg}    (?i)e[-–]mail
 
       
-
-*** Test Cases ***
-Teste Login sem informar @ no campo e-mail
-    Open Browser    http://localhost:8000/login/login.html    Safari
-    Maximize Browser Window
-    C3 Tentar fazer Login sem informar @ no e-mail
-    C3 Verificar Notificacao Digite um endereço de e-mail
-    Close Browser
