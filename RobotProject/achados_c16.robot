@@ -5,7 +5,7 @@ Library    DateTime
 *** Variables ***
 ${PAUSA}           2s
 #EMPTY passa um campo vazio
-${VAZIO-16}    "        "
+${VAZIO-16}    ${EMPTY}
 ${Alerta-C16}        Por favor, insira um Nome válido
 
 *** Keywords ***

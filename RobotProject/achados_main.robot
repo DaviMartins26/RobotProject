@@ -47,6 +47,19 @@ CT1 - Tentar fazer Login com usuário não presente no banco de dados
     Acessar a pagina login
     C1 Logar como usuario inexistente
 	C1 Verificar Notificacao Credenciais Invalidas
+
+CT13 - Como funcionário logado tentar cadastrar um objeto com os campos vazios
+	[Documentation]    Esse Simula um funcionario registando um objeto com os campos nome_item, tipo-do-item e bloco-de-encontro não preenchidos 
+	[Tags]             registrar_objeto_achado
+	Acessar a pagina home do site
+    Acessar a pagina login
+    Logar como FUN
+	Acessar a pagina RegistrarObjeto
+    Verificar Pagina RegistrarObjeto
+	C13 Passar valor Nulo
+    Acionar o botão Botao_Registrar
+	C13 Verificar Notificacao
+
 	
 CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
 	[Documentation]    Esse teste tenta cadastrar campos do objeto como null/space
@@ -55,30 +68,14 @@ CT14 - Como funcionário logado tentar cadastrar um objeto com os campos NULL
     Acessar a pagina login
     Logar como FUN
 
-CT13 - Como funcionário logado tentar cadastrar um objeto com os campos vazios
-	[Documentation]    Esse Simula um funcionario registando um objeto com os campos nome_item, tipo-do-item e bloco-de-encontro não preenchidos 
-	[Tags]             registrar_objeto_achado
-	Acessar a pagina home do site
-    Acessar a pagina login
-	#DAVI: Deu erro no login
-    Logar como FUN
-	#DAVI: Não sei se eu fiz certo, precisa dar uma olhada no arquivo achados_registrarObjeto.robot
-	Acessar a pagina RegistrarObjeto
-    Verificar Pagina RegistrarObjeto
-	C13 Passar valor Nulo
-    Acionar o botão Botao_Registrar
-	C13 Verificar Notificacao
-
 CT16 - Como usuário normal tentar registrar um objeto que perdi passando os campos Null
 	[Documentation]    Esse Simula um usuario registando um objeto com o campo nome_item nullo
 	[Tags]             perda_futura
 	Acessar a pagina home do site
     Acessar a pagina login
-	#DAVI: Deu erro no login
     Logar como ALU
 	Acessar a pagina PerdiAlgo 
     Verificar Pagina PerdiAlgo
-	#DAVI: No meu caso de teste ele não deveria preencher nada, neste caso, é necessário eu passar algum valor nulo eu só deixo registrado a Verificação de Notificação?
 	C16 Passar valor Nulo
     Acionar o botão Enviar_Objeto
 	C16 Verificar Notificacao

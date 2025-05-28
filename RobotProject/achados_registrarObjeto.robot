@@ -7,8 +7,8 @@ Library    SeleniumLibrary
 
 Acessar a pagina RegistrarObjeto
     #Esse comando faz o robot esperar 5s até o elemento ficar visivel
-    Wait Until Element Is Visible    id=link_registrar_objeto
-    Click Element                    id=link_registrar_objeto
+    Wait Until Element Is Visible    id=registrar_objeto
+    Click Element                    id=registrar_objeto
     Wait Until Element Is Visible    id=nome_item          timeout=5s 
 
 Verificar Pagina RegistrarObjeto
