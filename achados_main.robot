@@ -11,8 +11,6 @@ Resource         achados_perdiAlgo.robot
 Resource         achados_registrarObjeto.robot
 #Acessar Pagina Meus Protolocos
 Resource         achados_meusProtocolos.robot
-#Acessaer Pagina Criar Conta
-Resource         achados_criarConta.robot
 #Comandos para o Caso 01
 Resource         achados_c1.robot
 #Comandos para o Caso 02
